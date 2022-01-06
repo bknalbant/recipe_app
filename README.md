@@ -1,4 +1,4 @@
-# Recipe App Backend Techs
+# Recipe App Backend 
 <ul>
 	<li>Spring Boot CRUD Application</li>
 	<li>Spring Security</li>
@@ -10,7 +10,7 @@
 	<li>Slf4j</li>
 </ul>
 
-# Recipe App Frontend Techs
+# Recipe App Frontend 
 <ul>
 	<li>React</li>
 	<li>React Router</li>
