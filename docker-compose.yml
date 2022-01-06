@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  recipe-backend:
+    image: backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - MYSQL_HOST=database-mysql
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=password
+    depends_on:
+      - database-mysql
+    
+  frontend:
+    image: frontend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - recipe-backend
+
+  database-mysql:
+    platform: linux/x86_64
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_general_ci
+    environment:
+      MYSQL_DATABASE: 'recipe_app'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'root_password'
+    volumes:
+      - db-recipe:/var/lib/mysql
+
+volumes:
+  db-recipe:
