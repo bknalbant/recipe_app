@@ -40,6 +40,12 @@
 		a) docker-compose up.
 		You will be able to see the application is started on :
 		http://localhost:3000/
+		
+	The system has defaulted a user to log in to the recipe application.
+	You can use this user to log in to our system.
+
+	username: demo
+	password: 12345
 
 
 
