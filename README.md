@@ -24,6 +24,7 @@
 	<li>Maven 3+</li>
 	<li>Java JDK 11</li>
 	<li>Docker (Engine 18.06.0+)</li>
+	<li>npm</li>
 </ul>
 
 # Getting Started
